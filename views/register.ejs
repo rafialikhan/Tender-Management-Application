@@ -1,0 +1,47 @@
+<%- include('partials/header') %>
+<% locals.verify="false"; %>
+<div class="form-container">
+    <h2>Register</h2>
+    <% if(locals.error) { %>
+        <div class="alert alert-danger"><%= error %></div>
+    <% } %>
+    <form method="post">
+        <div class="form-group">
+            <label for="firstName">First name</label>
+            <input type="text" name="firstName" id="firstName" class="form-control" value="<%= locals.firstName || '' %>" required />
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last name</label>
+            <input type="text" name="lastName" id="lastName" class="form-control" value="<%= locals.lastName || '' %>" required />
+        </div>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" class="form-control" value="<%= locals.username || '' %>" required />
+        </div>
+        <div class="form-group">
+            <label for="Account Type">Account Type :(Contractor or Pwd or Government)</label>
+            <input type="text" name="type" id="type" class="form-control" value="<%= locals.type || '' %>" required />
+        </div>
+        <div class="form-group">
+            <label for="Email-Id">Email-Id</label>
+            <input type="email" name="email" id="email" class="form-control" value="<%= locals.email || '' %>" required />
+        </div>
+        <div class="form-group">
+            <label for="Attachments">Attach Google Drive Link of all Attachments required for verification</label>
+            <input type="text" name="attach" id="attach" class="form-control" value="<%= locals.attach || '' %>" required />
+        </div>
+        <div class="form-group">
+            <label for="verify">Verify</label>
+            <input type="text" name="verify" id="verify" class="form-control" value="<%= locals.verify || ''%>" required readonly/>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Register</button>
+            <a href="/login" class="btn btn-link">Cancel</a>
+        </div>
+    </form>
+</div>
+<%- include('partials/footer') %>

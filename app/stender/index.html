@@ -1,0 +1,50 @@
+<h1>Show Tenders</h1>
+<div>
+<div class="col-xs-3 ">
+                        <p>Sort By :<select ng-model="query">
+    <option value="tenderid">TenderId</option>
+    <option value="tendername">TenderName</option>
+    <option value="bid">Bid</option>
+    <option value="contractorName">ContractorName</option>
+    <option value="past">Past Projects</option>
+    <option value="material">Materials Used</option>
+    <option value="startdate">Start Date</option>
+    <option value="enddate">End Date</option>
+    <option value="timeline">TimeLine</option>
+    <option value="level">Level</option>
+  </select></p>
+    <p>Order :<select ng-model="query1">
+    <option value="true">Ascending</option>
+    <option value="false">Descending</option>
+  </select></p>
+    <p>Search By :<input type="text" ng-model="search"></p>
+            </div>
+            <div class="col-xs-9 col-xs-offset-1" ng-if="query1 === 'true'">
+                <blockquote ng-repeat="tender in vm.arr | orderBy:query | filter:search">
+                    <p><strong>Tender Id:</strong>    {{tender.tenderid}}</p>
+                    <p><strong>Tender Contractor:</strong> {{tender.contractorName}}</p>
+                    <p><strong>Tender Name:</strong> {{tender.tendername}}</p>
+                    <p><strong>Tender Bid:</strong> {{tender.bid}}</p>
+                    <p><strong>Tender PastProjects:</strong> {{tender.past}}</p>
+                    <p><strong>Materials Used:</strong> {{tender.material}}</p>
+                    <p><strong>Start Date:</strong> {{tender.startdate}}</p>
+                    <p><strong>End Date:</strong> {{tender.enddate}}</p>
+                    <p><strong>Time Line:</strong> {{tender.timeline}} Days</p>
+                    <p><strong>Tender Status:</strong> {{tender.level}}</p>
+                </blockquote>
+</div>
+    <div class="col-xs-9 col-xs-offset-1" ng-if="query1 === 'false'">
+                <blockquote ng-repeat="tender in vm.arr | orderBy:-query | filter:search">
+                    <p><strong>Tender Id:</strong>    {{tender.tenderid}}</p>
+                    <p><strong>Tender Contractor:</strong> {{tender.contractorName}}</p>
+                    <p><strong>Tender Name:</strong> {{tender.tendername}}</p>
+                    <p><strong>Tender Bid:</strong> {{tender.bid}}</p>
+                    <p><strong>Tender PastProjects:</strong> {{tender.past}}</p>
+                    <p><strong>Materials Used:</strong> {{tender.material}}</p>
+                    <p><strong>Start Date:</strong> {{tender.startdate}}</p>
+                    <p><strong>End Date:</strong> {{tender.enddate}}</p>
+                    <p><strong>Time Line:</strong> {{tender.timeline}} Days</p>
+                    <p><strong>Tender Status:</strong> {{tender.level}}</p>
+                </blockquote>
+</div>
+</div>

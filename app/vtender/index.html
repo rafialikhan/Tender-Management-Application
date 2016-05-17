@@ -1,0 +1,15 @@
+<div ng-if="vm.x">
+<h1>Verify Tenders</h1>
+<div class="form-container">
+    <form method="post">
+        <div class="form-group">
+            <label for="tenderid">Tender Id</label>
+            <input type="text" class="form-control" ng-model="vm.y" required />
+        </div>
+    </form>
+    <button type="button" ng-click="vm.submitTender()">Verify</button>
+</div>
+</div>
+<div ng-if="!vm.x">
+<h1>You must be a Pwd or Government Official to view this section</h1>
+</div>

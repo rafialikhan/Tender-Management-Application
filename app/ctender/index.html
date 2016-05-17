@@ -1,0 +1,23 @@
+<div >
+<h1>Compare Tenders (Enter Two Tender IDs to compare)</h1>
+<div class="form-container">
+    <form method="post">
+        <div class="form-group" class="row-content">
+            <div class="col-xs-6">
+            <input type="text" class="form-control" ng-model="vm.y1" required />
+            </div>
+            <div class="col-xs-6">
+            <input type="text" class="form-control" ng-model="vm.y2" required />
+            </div>
+        </div>
+    </form>
+    <button type="button" ng-click="vm.submitTender()">Compare</button>
+</div>
+<div>
+    <p><strong>Bid Difference</strong>                : {{vm.x.bid}} <strong>|</strong> {{vm.y.bid}}</p>
+    <p><strong>Timeline Difference</strong>           : {{vm.x.timeline}} Days <strong>|</strong> {{vm.y.timeline}} Days</p>
+    <p><strong>Past Projects Difference</strong>      : {{vm.x.past}} <strong>|</strong> {{vm.y.past}}</p>
+    <p><strong>Materials Difference</strong>          : {{vm.x.material}} <strong>|</strong> {{vm.y.material}}</p>
+    <p><strong>Tender Level Difference</strong>       : {{vm.x.level}} <strong>|</strong> {{vm.y.level}}</p>
+</div>
+</div>

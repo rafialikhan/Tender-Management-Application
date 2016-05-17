@@ -1,0 +1,37 @@
+<div ng-if="vm.x">
+<h1>Fill A Tender</h1>
+<div class="form-container">
+    <form method="post" name="theform">
+        <div class="form-group">
+            <label for="tenderName">Tender name</label>
+            <input type="text" class="form-control" ng-model="vm.tender.tendername" required />
+        </div>
+        <div class="form-group">
+            <label for="tenderBid">Bid Cost</label>
+            <input type="number" min="0" id="budget" class="form-control" ng-model="vm.tender.bid" required />
+        </div>
+        <div class="form-group">
+            <label for="pastProjects">Past Projects</label>
+            <input type="text" value="none" class="form-control" ng-model="vm.tender.past" required />
+        </div>
+        <div class="form-group">
+            <label for="materialUsed">Materials Used</label>
+            <input type="text" class="form-control" ng-model="vm.tender.material" required />
+        </div>
+        <div class="form-group">
+            <label for="startdate">Start Date</label>
+            <input type="date" class="form-control" ng-model="vm.tender.startdate" required />
+        </div>
+        <div class="form-group">
+            <label for="enddate">End Date</label>
+            <input type="date" class="form-control" ng-model="vm.tender.enddate" required />
+        </div>
+        <div class="form-group">
+            <input type="submit" id="submitbutton" value="submit" ng-click="vm.submitTender()">
+        </div>
+    </form>
+</div>
+</div>
+<div ng-if="!vm.x">
+<h1>You must be a Contractor to fill this section</h1>
+</div>
