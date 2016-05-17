@@ -22,3 +22,5 @@ Govt.
 For verifying a user,
 To show unverified users do a node showunverifiedusers
 To verify a user do node verifyuser
+
+For more info drop a mail at rahul.gautam21@gmail.com
